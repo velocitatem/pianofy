@@ -1,0 +1,48 @@
+mf = MIDIFile(1)  
+track = 0   
+time = 0    
+mf.addTrackName(track, time, "Music mash")
+mf.addTempo(track, time, 70)
+channel = 0
+volume = 100
+def appendS(pt,t,d):
+    pitch = pt           # tn
+    time = t             # bt start
+    duration = d         # length of beat
+    mf.addNote(track, channel, pitch, time, duration, volume)
+pp = 67
+ch = 0
+rd = 200
+rd = int(rd)
+pos = 0
+print(pred)
+pred=pred.tolist()
+for note in pred:
+    pos+=1
+    print(note)
+    print(pos)
+    appendS(note, pos, 2)
+
+with open(f"music_track{random.randint(10, 3000)}.mid", 'wb') as outf:
+    print(mf)
+    mf.writeFile(outf)
+    print(array)
+    pyplot.plot(x, y)
+    pyplot.plot(x, pred)
+    pyplot.show()
+
+
+
+
+data = list()
+song = "furelise.mid"
+mid = mido.MidiFile(song)
+for msg in mid.play():    
+    cl = str(msg)
+    if 'note' in cl:
+        cl=(cl.split("note=",1)[1])
+        #print(int(cl[0:3]))
+        data.append(int(cl[0:3]))   
+        print(int(cl[0:3]))
+
+print(data)    
